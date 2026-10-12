@@ -1384,6 +1384,18 @@ main {
   place-items: center;
   overflow: hidden;
 }
+.project-thumb.has-image {
+  background: #092d3b;
+}
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.project-card:hover .project-image {
+  transform: scale(1.04);
+}
 .project-big-icon {
   font-size: 4.2rem;
   color: rgba(255, 255, 255, 0.92);
@@ -1451,6 +1463,9 @@ main {
 .project-link:hover {
   color: var(--accent-2);
   gap: 0.8rem;
+}
+.project-link-static {
+  cursor: default;
 }
 
 /* ---------- Resume / timeline ---------- */

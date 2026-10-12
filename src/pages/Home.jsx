@@ -261,8 +261,8 @@ export default function Home() {
               Featured <span className="gradient-text">Projects</span>
             </h2>
             <p className="section-sub">
-              Websites I&apos;ve built with HTML, CSS, JavaScript and Firebase —
-              with new React &amp; MERN projects on the way.
+              Live web projects built with React and the MERN stack, plus
+              Pasni Fish, an offline desktop dashboard made with React and Electron.
             </p>
           </Reveal>
 

@@ -7,7 +7,7 @@ import Reveal from "../components/Reveal";
 import ProjectCard from "../components/ProjectCard";
 import { projects } from "../data";
 
-const filters = ["All", "HTML · CSS · JS", "Firebase"];
+const filters = ["All", "Web App", "Desktop App"];
 
 export default function Projects() {
   const [active, setActive] = useState("All");
@@ -22,7 +22,7 @@ export default function Projects() {
       <PageHero
         tag="My Work"
         title="Featured Projects"
-        subtitle="I've built websites with HTML, CSS, JavaScript and Firebase — and I'm now crafting new projects with React and the MERN stack. Here are some of my favorites."
+        subtitle="Explore my live web projects built with React and the MERN stack, plus Pasni Fish, an offline desktop dashboard built with React and Electron."
       />
 
       <section className="section">

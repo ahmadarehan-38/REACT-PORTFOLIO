@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="40" x2="1080" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B2632"/>
+      <stop offset="1" stop-color="#123D47"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#4ED1B0"/>
+      <stop offset="1" stop-color="#27A6A7"/>
+    </linearGradient>
+    <linearGradient id="chart" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#4ED1B0" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#4ED1B0" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#04171D" flood-opacity=".32"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="700" rx="28" fill="url(#bg)"/>
+  <rect x="26" y="26" width="1148" height="648" rx="20" fill="#F4F8F6"/>
+  <path d="M46 26h202v648H46a20 20 0 0 1-20-20V46a20 20 0 0 1 20-20Z" fill="#102F3A"/>
+  <circle cx="75" cy="68" r="20" fill="url(#accent)"/>
+  <path d="M66 68c8-11 17-11 26 0-9 11-18 11-26 0Zm11 0h.1" stroke="#0D313C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="106" y="74" fill="#F3FBF8" font-family="Arial, sans-serif" font-size="19" font-weight="700">PASNI FISH</text>
+  <text x="62" y="133" fill="#71909A" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.4">WORKSPACE</text>
+  <rect x="48" y="151" width="177" height="43" rx="10" fill="#1D4651"/>
+  <rect x="62" y="164" width="16" height="16" rx="4" fill="url(#accent)"/>
+  <path d="M66 172h8m-4-4v8" stroke="#10333C" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="89" y="178" fill="#EAF8F3" font-family="Arial, sans-serif" font-size="13" font-weight="600">Dashboard</text>
+  <g fill="#A4BDC1" font-family="Arial, sans-serif" font-size="13">
+    <text x="89" y="228">Fish Inventory</text>
+    <text x="89" y="272">Sales &amp; Orders</text>
+    <text x="89" y="316">Customers</text>
+    <text x="89" y="360">Reports</text>
+  </g>
+  <g stroke="#688992" stroke-width="1.5" stroke-linecap="round">
+    <path d="M65 219h13m-13 44h13m-13 44h13m-13 44h13"/>
+  </g>
+  <rect x="61" y="604" width="146" height="42" rx="10" fill="#173D48"/>
+  <circle cx="80" cy="625" r="5" fill="#55D3AD"/>
+  <text x="94" y="629" fill="#C9DFDC" font-family="Arial, sans-serif" font-size="11">Offline mode</text>
+  <text x="278" y="81" fill="#18343C" font-family="Arial, sans-serif" font-size="25" font-weight="700">Good morning, Pasni</text>
+  <text x="278" y="107" fill="#82969A" font-family="Arial, sans-serif" font-size="13">Here&apos;s your fish business overview today.</text>
+  <rect x="1006" y="57" width="137" height="38" rx="10" fill="#E6F4EE"/>
+  <circle cx="1024" cy="76" r="5" fill="#21AA7C"/>
+  <text x="1036" y="80" fill="#277A61" font-family="Arial, sans-serif" font-size="11" font-weight="600">Data saved locally</text>
+  <g filter="url(#shadow)">
+    <rect x="278" y="137" width="196" height="116" rx="14" fill="#fff"/>
+    <rect x="490" y="137" width="196" height="116" rx="14" fill="#fff"/>
+    <rect x="702" y="137" width="196" height="116" rx="14" fill="#fff"/>
+    <rect x="914" y="137" width="229" height="116" rx="14" fill="#fff"/>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <text x="298" y="169" fill="#82969A" font-size="12">Today&apos;s sales</text>
+    <text x="298" y="207" fill="#18343C" font-size="25" font-weight="700">Rs 84,500</text>
+    <text x="298" y="230" fill="#21A779" font-size="11">+12.8% this week</text>
+    <text x="510" y="169" fill="#82969A" font-size="12">Active orders</text>
+    <text x="510" y="207" fill="#18343C" font-size="25" font-weight="700">28</text>
+    <text x="510" y="230" fill="#21A779" font-size="11">8 ready to ship</text>
+    <text x="722" y="169" fill="#82969A" font-size="12">Fish in stock</text>
+    <text x="722" y="207" fill="#18343C" font-size="25" font-weight="700">1,240 kg</text>
+    <text x="722" y="230" fill="#21A779" font-size="11">Across 6 varieties</text>
+    <text x="934" y="169" fill="#82969A" font-size="12">Customers</text>
+    <text x="934" y="207" fill="#18343C" font-size="25" font-weight="700">156</text>
+    <text x="934" y="230" fill="#21A779" font-size="11">14 new this month</text>
+  </g>
+  <rect x="278" y="273" width="552" height="356" rx="14" fill="#fff" filter="url(#shadow)"/>
+  <text x="302" y="309" fill="#18343C" font-family="Arial, sans-serif" font-size="15" font-weight="700">Sales overview</text>
+  <text x="302" y="330" fill="#92A3A6" font-family="Arial, sans-serif" font-size="11">Weekly revenue performance</text>
+  <g stroke="#E8EFEC" stroke-width="1">
+    <path d="M342 374h455M342 425h455M342 476h455M342 527h455M342 578h455"/>
+  </g>
+  <path d="m350 527 65-28 63 13 66-64 65 17 65-52 63 13 60-48v202H350V527Z" fill="url(#chart)"/>
+  <path d="m350 527 65-28 63 13 66-64 65 17 65-52 63 13 60-48" stroke="#23B897" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#94A5A6" font-family="Arial, sans-serif" font-size="10">
+    <text x="348" y="605">Mon</text><text x="414" y="605">Tue</text><text x="478" y="605">Wed</text><text x="544" y="605">Thu</text><text x="610" y="605">Fri</text><text x="674" y="605">Sat</text><text x="740" y="605">Sun</text>
+  </g>
+  <rect x="850" y="273" width="293" height="356" rx="14" fill="#fff" filter="url(#shadow)"/>
+  <text x="875" y="309" fill="#18343C" font-family="Arial, sans-serif" font-size="15" font-weight="700">Recent orders</text>
+  <text x="875" y="330" fill="#92A3A6" font-family="Arial, sans-serif" font-size="11">Latest customer activity</text>
+  <g font-family="Arial, sans-serif">
+    <circle cx="890" cy="371" r="16" fill="#E0F4ED"/><text x="884" y="375" fill="#309978" font-size="10" font-weight="700">AK</text>
+    <text x="917" y="368" fill="#29454B" font-size="11" font-weight="600">Ahmed Khan</text><text x="917" y="385" fill="#94A4A5" font-size="10">Tuna · 12 kg</text>
+    <rect x="1060" y="361" width="59" height="22" rx="7" fill="#E4F5EC"/><text x="1070" y="376" fill="#278965" font-size="9">Ready</text>
+    <path d="M875 400h244" stroke="#EEF2F0"/>
+    <circle cx="890" cy="428" r="16" fill="#E4EFF8"/><text x="884" y="432" fill="#5185AB" font-size="10" font-weight="700">SB</text>
+    <text x="917" y="425" fill="#29454B" font-size="11" font-weight="600">Sana Baloch</text><text x="917" y="442" fill="#94A4A5" font-size="10">Kingfish · 8 kg</text>
+    <rect x="1050" y="418" width="69" height="22" rx="7" fill="#FFF4DE"/><text x="1057" y="433" fill="#B8872A" font-size="9">Packing</text>
+    <path d="M875 457h244" stroke="#EEF2F0"/>
+    <circle cx="890" cy="485" r="16" fill="#F7EDE1"/><text x="884" y="489" fill="#AD7741" font-size="10" font-weight="700">JM</text>
+    <text x="917" y="482" fill="#29454B" font-size="11" font-weight="600">Jamal Marine</text><text x="917" y="499" fill="#94A4A5" font-size="10">Sardines · 20 kg</text>
+    <rect x="1050" y="475" width="69" height="22" rx="7" fill="#E4F5EC"/><text x="1060" y="490" fill="#278965" font-size="9">Ready</text>
+    <path d="M875 514h244" stroke="#EEF2F0"/>
+    <circle cx="890" cy="542" r="16" fill="#F4E8F1"/><text x="884" y="546" fill="#966F90" font-size="10" font-weight="700">MR</text>
+    <text x="917" y="539" fill="#29454B" font-size="11" font-weight="600">M. Rehman</text><text x="917" y="556" fill="#94A4A5" font-size="10">Pomfret · 5 kg</text>
+    <rect x="1050" y="532" width="69" height="22" rx="7" fill="#E4EFF8"/><text x="1057" y="547" fill="#5185AB" font-size="9">Shipped</text>
+  </g>
+  <rect x="875" y="579" width="244" height="30" rx="8" fill="#F0F7F4"/>
+  <text x="951" y="598" fill="#318A6F" font-family="Arial, sans-serif" font-size="10" font-weight="600">View all orders</text>
+</svg>
