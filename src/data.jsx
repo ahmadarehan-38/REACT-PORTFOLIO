@@ -7,8 +7,6 @@ import {
   FaRocket,
   FaGithub,
   FaLinkedinIn,
-  FaInstagram,
-  FaFacebookF,
   FaBirthdayCake,
   FaLanguage,
   FaFlag,
@@ -54,10 +52,8 @@ export const profile = {
 };
 
 export const socials = [
-  { icon: <FaGithub />, label: "GitHub", href: "#" },
-  { icon: <FaLinkedinIn />, label: "LinkedIn", href: "#" },
-  { icon: <FaInstagram />, label: "Instagram", href: "#" },
-  { icon: <FaFacebookF />, label: "Facebook", href: "#" },
+  { icon: <FaGithub />, label: "GitHub", href: "https://github.com/ahmadarehan-38" },
+  { icon: <FaLinkedinIn />, label: "LinkedIn", href: "https://www.linkedin.com/in/ahmad-rehan/" },
 ];
 
 export const navLinks = [

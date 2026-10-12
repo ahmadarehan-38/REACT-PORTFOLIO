@@ -1,8 +1,4 @@
 import {
-  FaGithub,
-  FaLinkedinIn,
-  FaInstagram,
-  FaFacebookF,
   FaBriefcase,
   FaProjectDiagram,
   FaMapMarkerAlt,
@@ -14,6 +10,7 @@ import {
 } from "react-icons/fa";
 import Reveal from "./Reveal";
 import Tilt from "./Tilt";
+import { socials } from "../data";
 
 const details = [
   { icon: <FaBirthdayCake />, label: "Date of Birth", value: "20 October 2008" },
@@ -77,18 +74,18 @@ export default function About() {
             </p>
 
             <div className="social-row about-socials">
-              <a href="#" aria-label="GitHub" title="GitHub">
-                <FaGithub />
-              </a>
-              <a href="#" aria-label="LinkedIn" title="LinkedIn">
-                <FaLinkedinIn />
-              </a>
-              <a href="#" aria-label="Instagram" title="Instagram">
-                <FaInstagram />
-              </a>
-              <a href="#" aria-label="Facebook" title="Facebook">
-                <FaFacebookF />
-              </a>
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  title={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
 
             <div className="details-grid">

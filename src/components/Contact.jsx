@@ -4,12 +4,9 @@ import {
   FaPhoneAlt,
   FaMapMarkerAlt,
   FaPaperPlane,
-  FaGithub,
-  FaLinkedinIn,
-  FaInstagram,
-  FaFacebookF,
 } from "react-icons/fa";
 import Reveal from "./Reveal";
+import { socials } from "../data";
 
 const info = [
   {
@@ -98,18 +95,18 @@ ${message}`;
             <div className="contact-socials">
               <span className="social-label">Follow Me</span>
               <div className="social-row">
-                <a href="#" aria-label="GitHub" title="GitHub">
-                  <FaGithub />
-                </a>
-                <a href="#" aria-label="LinkedIn" title="LinkedIn">
-                  <FaLinkedinIn />
-                </a>
-                <a href="#" aria-label="Instagram" title="Instagram">
-                  <FaInstagram />
-                </a>
-                <a href="#" aria-label="Facebook" title="Facebook">
-                  <FaFacebookF />
-                </a>
+                {socials.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    title={social.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </Reveal>

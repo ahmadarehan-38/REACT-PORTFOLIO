@@ -1,10 +1,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import {
-  FaGithub,
-  FaLinkedinIn,
-  FaInstagram,
-  FaFacebookF,
   FaArrowDown,
   FaCss3Alt,
   FaDownload,
@@ -18,6 +14,7 @@ import {
 } from "react-icons/si";
 
 import Counter from "./Counter";
+import { socials } from "../data";
 
 const line1 = ["Turning", "Ideas", "Into"];
 const line2 = ["Powerful", "Digital", "Solutions"];
@@ -141,18 +138,18 @@ export default function Hero() {
           >
             <span className="social-label">Find me on</span>
             <div className="social-row">
-              <a href="#" aria-label="GitHub" title="GitHub">
-                <FaGithub />
-              </a>
-              <a href="#" aria-label="LinkedIn" title="LinkedIn">
-                <FaLinkedinIn />
-              </a>
-              <a href="#" aria-label="Instagram" title="Instagram">
-                <FaInstagram />
-              </a>
-              <a href="#" aria-label="Facebook" title="Facebook">
-                <FaFacebookF />
-              </a>
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  title={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </motion.div>
 
