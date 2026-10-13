@@ -113,8 +113,9 @@ export const projects = [
     tags: ["React", "Node.js", "Express.js", "MongoDB", "GSAP", "Figma"],
     category: "Web App",
     url: "https://bowan.vercel.app",
+    image: "/Bowan%20Education%20Logo%20with%20Book%20and%20Cap.png",
+    imageAlt: "Bowan education logo",
     gradient: "linear-gradient(135deg, #182848 0%, #4b6cb7 60%, #77d4df 120%)",
-    icon: "FaGlobe",
   },
   {
     key: "makran-blue",
@@ -124,8 +125,9 @@ export const projects = [
     tags: ["React", "Node.js", "Express.js", "MongoDB", "GSAP", "Figma"],
     category: "Web App",
     url: "https://makran-blue.vercel.app",
+    image: "/icon-192.png",
+    imageAlt: "Makran Blue logo",
     gradient: "linear-gradient(135deg, #063b5c 0%, #087eaa 55%, #61d6d1 120%)",
-    icon: "FaGlobe",
   },
   {
     key: "pasni-fish",
