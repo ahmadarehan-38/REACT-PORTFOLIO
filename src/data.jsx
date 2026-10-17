@@ -115,7 +115,7 @@ export const projects = [
     url: "https://bowan.vercel.app",
     image: "/Bowan%20Education%20Logo%20with%20Book%20and%20Cap.png",
     imageAlt: "Bowan education logo",
-    gradient: "linear-gradient(135deg, #182848 0%, #4b6cb7 60%, #77d4df 120%)",
+    gradient: "linear-gradient(135deg, #2b0a15 0%, #722f37 55%, #c9a86a 130%)",
   },
   {
     key: "makran-blue",
@@ -127,7 +127,7 @@ export const projects = [
     url: "https://makran-blue.vercel.app",
     image: "/icon-192.png",
     imageAlt: "Makran Blue logo",
-    gradient: "linear-gradient(135deg, #063b5c 0%, #087eaa 55%, #61d6d1 120%)",
+    gradient: "linear-gradient(135deg, #3a0f1f 0%, #8e2438 50%, #d9b57c 125%)",
   },
   {
     key: "pasni-fish",
@@ -138,7 +138,7 @@ export const projects = [
     category: "Desktop App",
     image: "/pasni-fish-dashboard.svg",
     imageAlt: "Illustrative dashboard preview for the Pasni Fish desktop app",
-    gradient: "linear-gradient(135deg, #092d3b 0%, #146f79 60%, #73d2bd 120%)",
+    gradient: "linear-gradient(135deg, #1d0710 0%, #5c1a2a 55%, #a9822f 130%)",
   },
 ];
 
@@ -157,7 +157,7 @@ export const tools = [
   { icon: <SiReact />, name: "React", color: "#61dafb" },
   { icon: <SiJavascript />, name: "JavaScript", color: "#f7df1e" },
   { icon: <SiNodedotjs />, name: "Node.js", color: "#7ccf29" },
-  { icon: <SiExpress />, name: "Express", color: "#8bd0ff" },
+  { icon: <SiExpress />, name: "Express", color: "var(--heading)" },
   { icon: <SiMongodb />, name: "MongoDB", color: "#4fbd54" },
   { icon: <SiFirebase />, name: "Firebase", color: "#ffca28" },
   { icon: <SiSupabase />, name: "Supabase", color: "#3ecf8e" },
@@ -165,7 +165,7 @@ export const tools = [
   { icon: <FaCss3Alt />, name: "CSS3", color: "#38bdf8" },
   { icon: <SiTailwindcss />, name: "Tailwind", color: "#38bdf8" },
   { icon: <SiGit />, name: "Git", color: "#f05033" },
-  { icon: <SiGithub />, name: "GitHub", color: "#c9d1ff" },
+  { icon: <SiGithub />, name: "GitHub", color: "var(--heading)" },
   { icon: <SiVite />, name: "Vite", color: "#a855f7" },
   { icon: <SiNpm />, name: "npm", color: "#cb3837" },
   { icon: <SiFigma />, name: "Figma", color: "#a259ff" },

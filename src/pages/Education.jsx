@@ -60,13 +60,13 @@ export default function Education() {
             icon={<FaGraduationCap />}
             title="Education"
             items={education}
-            accent="#7c5cff"
+            accent="var(--timeline-1)"
           />
           <TimelineColumn
             icon={<FaBriefcase />}
             title="Experience"
             items={experience}
-            accent="#00d4ff"
+            accent="var(--timeline-2)"
           />
         </div>
 
