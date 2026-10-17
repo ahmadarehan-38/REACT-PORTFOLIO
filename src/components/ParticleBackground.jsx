@@ -31,8 +31,9 @@ export default function ParticleBackground() {
       ctx.clearRect(0, 0, w, h);
       const light =
         document.documentElement.getAttribute("data-theme") === "light";
-      const dotColor = light ? "99, 86, 220" : "150, 132, 255";
-      const lineColor = light ? "124, 92, 255" : "124, 110, 255";
+      const dotColor = light ? "122, 27, 47" : "233, 205, 168";
+      const lineColor = light ? "122, 27, 47" : "201, 168, 106";
+      const cursorColor = light ? "150, 112, 42" : "212, 175, 106";
       const linkDist = 130;
 
       for (const p of particles) {
@@ -80,7 +81,7 @@ export default function ParticleBackground() {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(0, 212, 255, ${alpha})`;
+          ctx.strokeStyle = `rgba(${cursorColor}, ${alpha})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }
