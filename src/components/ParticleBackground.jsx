@@ -31,9 +31,9 @@ export default function ParticleBackground() {
       ctx.clearRect(0, 0, w, h);
       const light =
         document.documentElement.getAttribute("data-theme") === "light";
-      const dotColor = light ? "122, 27, 47" : "233, 205, 168";
-      const lineColor = light ? "122, 27, 47" : "201, 168, 106";
-      const cursorColor = light ? "150, 112, 42" : "212, 175, 106";
+      const dotColor = light ? "113, 67, 77" : "170, 160, 150";
+      const lineColor = light ? "113, 67, 77" : "150, 130, 136";
+      const cursorColor = light ? "124, 114, 105" : "150, 130, 136";
       const linkDist = 130;
 
       for (const p of particles) {

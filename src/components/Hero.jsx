@@ -184,13 +184,13 @@ export default function Hero() {
             <div className="scene" ref={sceneRef}>
               {/* orbit rings */}
               <div className="ring ring-1">
-                <span className="ring-dot" style={{ background: "#c9a86a" }} />
+                <span className="ring-dot" style={{ background: "#9a8f86" }} />
               </div>
               <div className="ring ring-2">
-                <span className="ring-dot" style={{ background: "#a62142" }} />
+                <span className="ring-dot" style={{ background: "#8a5a64" }} />
               </div>
               <div className="ring ring-3">
-                <span className="ring-dot" style={{ background: "#e9cd8f" }} />
+                <span className="ring-dot" style={{ background: "#b7a98f" }} />
               </div>
 
               {/* center card */}

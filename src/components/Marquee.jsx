@@ -33,7 +33,7 @@ export default function Marquee() {
           <div className="marquee-item" key={i}>
             <span className="marquee-icon">{t.icon}</span>
             <span>{t.name}</span>
-            <span className="marquee-star">✦</span>
+            <span className="marquee-star">·</span>
           </div>
         ))}
       </div>

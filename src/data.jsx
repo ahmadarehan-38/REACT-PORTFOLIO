@@ -115,7 +115,7 @@ export const projects = [
     url: "https://bowan.vercel.app",
     image: "/Bowan%20Education%20Logo%20with%20Book%20and%20Cap.png",
     imageAlt: "Bowan education logo",
-    gradient: "linear-gradient(135deg, #2b0a15 0%, #722f37 55%, #c9a86a 130%)",
+    gradient: "linear-gradient(135deg, #2a2125 0%, #4a3a40 55%, #6b5a60 130%)",
   },
   {
     key: "makran-blue",
@@ -127,7 +127,7 @@ export const projects = [
     url: "https://makran-blue.vercel.app",
     image: "/icon-192.png",
     imageAlt: "Makran Blue logo",
-    gradient: "linear-gradient(135deg, #3a0f1f 0%, #8e2438 50%, #d9b57c 125%)",
+    gradient: "linear-gradient(135deg, #332830 0%, #54424a 50%, #7a6a70 125%)",
   },
   {
     key: "pasni-fish",
@@ -138,7 +138,7 @@ export const projects = [
     category: "Desktop App",
     image: "/pasni-fish-dashboard.svg",
     imageAlt: "Illustrative dashboard preview for the Pasni Fish desktop app",
-    gradient: "linear-gradient(135deg, #1d0710 0%, #5c1a2a 55%, #a9822f 130%)",
+    gradient: "linear-gradient(135deg, #221a1d 0%, #3a2e33 55%, #5f5054 130%)",
   },
 ];
 
