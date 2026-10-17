@@ -50,13 +50,8 @@ export default function Hero() {
           <a href="#portfolio" className="btn btn-ghost-light">
             View My Work
           </a>
-          <a
-            href="/cv/ahmad-rehan-cv.html"
-            target="_blank"
-            rel="noopener"
-            className="btn btn-ghost-light"
-          >
-            <FaDownload /> Download CV
+          <a href="#cv" className="btn btn-ghost-light">
+            <FaDownload /> View CV
           </a>
         </motion.div>
 

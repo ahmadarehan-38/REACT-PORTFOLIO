@@ -51,13 +51,8 @@ export default function About() {
             <a href="#contact" className="btn btn-primary">
               Hire Me
             </a>
-            <a
-              href="/cv/ahmad-rehan-cv.html"
-              target="_blank"
-              rel="noopener"
-              className="btn btn-ghost"
-            >
-              <FaDownload /> Download CV
+            <a href="#cv" className="btn btn-ghost">
+              <FaDownload /> View CV
             </a>
           </div>
         </Reveal>
