@@ -1,27 +1,37 @@
 import { useEffect, useState } from "react";
-import { NavLink, Link, useLocation } from "react-router-dom";
 import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
 import { navLinks } from "../data";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("#home");
   const [theme, setTheme] = useState(
     () => document.documentElement.getAttribute("data-theme") || "dark"
   );
-  const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    const ids = navLinks.map((l) => l.to.slice(1));
+
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+
+      // Scrollspy: highlight the section currently in view
+      const offset = 120;
+      let current = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= offset) {
+          current = id;
+        }
+      }
+      setActive(`#${current}`);
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setOpen(false);
-  }, [location.pathname]);
 
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";
@@ -33,21 +43,25 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${scrolled || location.pathname !== "/" ? "scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="container nav-inner">
-        <Link to="/" className="logo" onClick={() => setOpen(false)}>
+        <a href="#home" className="logo" onClick={() => setOpen(false)}>
           <span className="logo-mark">AR</span>
           <span className="logo-text">
             Ahmad<span>Rehan</span>
           </span>
-        </Link>
+        </a>
 
         <ul className={`nav-links ${open ? "open" : ""}`}>
           {navLinks.map((l) => (
             <li key={l.to}>
-              <NavLink to={l.to} end={l.to === "/"}>
+              <a
+                href={l.to}
+                className={active === l.to ? "active" : ""}
+                onClick={() => setOpen(false)}
+              >
                 {l.label}
-              </NavLink>
+              </a>
             </li>
           ))}
         </ul>
@@ -65,9 +79,9 @@ export default function Navbar() {
             </span>
           </button>
 
-          <Link to="/contact" className="btn btn-primary nav-hire">
+          <a href="#contact" className="btn btn-primary nav-hire">
             Hire Me
-          </Link>
+          </a>
 
           <button
             className="hamburger"

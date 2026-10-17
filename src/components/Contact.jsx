@@ -45,15 +45,7 @@ export default function Contact() {
   const sendToWhatsApp = (e) => {
     e.preventDefault();
     const { name, email, subject, phone, message } = formData;
-    const whatsappMessage = `*Hello! I'd like to work with you.*
-
-*Name:* ${name}
-*Email:* ${email}
-*Subject:* ${subject || "—"}
-*Phone:* ${phone}
-
-*Message:*
-${message}`;
+    const whatsappMessage = `*Hello! I'd like to work with you.*\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject || "—"}\n*Phone:* ${phone}\n\n*Message:*\n${message}`;
     const url = `https://wa.me/923340776122?text=${encodeURIComponent(
       whatsappMessage
     )}`;
@@ -64,54 +56,17 @@ ${message}`;
     <section id="contact" className="section">
       <div className="container">
         <Reveal className="section-head">
-          <span className="section-tag">Get In Touch</span>
           <h2 className="section-title">
-            Let&apos;s Build Something{" "}
-            <span className="gradient-text">Together</span>
+            <span className="thin">Get</span> <strong>In Touch</strong>
           </h2>
           <p className="section-sub">
-            Have a project in mind or want to work together? Send me a message and
-            I&apos;ll get back to you on WhatsApp.
+            Have a project in mind or want to work together? Send me a message
+            and I&apos;ll get back to you on WhatsApp.
           </p>
         </Reveal>
 
         <div className="contact-grid">
-          <Reveal className="contact-info" delay={0.1}>
-            {info.map((c) => (
-              <a
-                key={c.label}
-                className="contact-card"
-                href={c.href || undefined}
-                onClick={c.href ? undefined : (e) => e.preventDefault()}
-              >
-                <span className="contact-icon">{c.icon}</span>
-                <div>
-                  <span className="contact-label">{c.label}</span>
-                  <span className="contact-value">{c.value}</span>
-                </div>
-              </a>
-            ))}
-
-            <div className="contact-socials">
-              <span className="social-label">Follow Me</span>
-              <div className="social-row">
-                {socials.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    title={social.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.2}>
+          <Reveal delay={0.1}>
             <form className="contact-form" onSubmit={sendToWhatsApp}>
               <div className="form-row">
                 <input
@@ -160,6 +115,57 @@ ${message}`;
                 <FaPaperPlane /> Send via WhatsApp
               </button>
             </form>
+          </Reveal>
+
+          <Reveal className="contact-side" delay={0.2}>
+            <div className="contact-details">
+              <h3>My Contact Details</h3>
+              {info.map((c) =>
+                c.href ? (
+                  <a key={c.label} className="contact-row" href={c.href}>
+                    <span className="contact-ricon">{c.icon}</span>
+                    <div>
+                      <span className="contact-label">{c.label}</span>
+                      <span className="contact-value">{c.value}</span>
+                    </div>
+                  </a>
+                ) : (
+                  <div key={c.label} className="contact-row">
+                    <span className="contact-ricon">{c.icon}</span>
+                    <div>
+                      <span className="contact-label">{c.label}</span>
+                      <span className="contact-value">{c.value}</span>
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+
+            <div className="contact-socials">
+              <span className="social-label">Follow Me</span>
+              <div className="social-row">
+                {socials.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    title={social.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="contact-note">
+              <span className="pulse-dot" />
+              <p>
+                <strong>Fastest reply:</strong> WhatsApp — I usually respond
+                within a few hours.
+              </p>
+            </div>
           </Reveal>
         </div>
       </div>

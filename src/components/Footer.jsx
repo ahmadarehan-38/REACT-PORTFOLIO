@@ -1,65 +1,58 @@
-import { Link } from "react-router-dom";
-import {
-  FaGithub,
-  FaLinkedinIn,
-  FaInstagram,
-  FaFacebookF,
-  FaArrowUp,
-} from "react-icons/fa";
-import { profile, socials, navLinks } from "../data";
+import { FaArrowUp } from "react-icons/fa";
+import { socials, navLinks } from "../data";
 
 export default function Footer() {
+  const scrollTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="footer">
-      <div className="container footer-grid">
-        <div className="footer-brand">
-          <Link to="/" className="logo">
-            <span className="logo-mark">AR</span>
-            <span className="logo-text">
-              Ahmad<span>Rehan</span>
-            </span>
-          </Link>
-          <p>
-            Building modern web experiences with creativity, clean code and
-            innovative solutions.
-          </p>
-          <div className="social-row">
-            {socials.map((s) => (
-              <a key={s.label} href={s.href} aria-label={s.label} title={s.label}>
-                {s.icon}
-              </a>
-            ))}
-          </div>
-        </div>
+      <div className="container footer-inner">
+        <a href="#home" className="logo">
+          <span className="logo-mark">AR</span>
+          <span className="logo-text">
+            Ahmad<span>Rehan</span>
+          </span>
+        </a>
 
-        <div className="footer-col">
-          <h3>Quick Links</h3>
-          {navLinks.map((l) => (
-            <Link key={l.to} to={l.to}>
-              {l.label}
-            </Link>
+        <p className="footer-tag">
+          Building modern web experiences with creativity, clean code and
+          innovative solutions.
+        </p>
+
+        <div className="social-row">
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              aria-label={s.label}
+              title={s.label}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {s.icon}
+            </a>
           ))}
         </div>
 
-        <div className="footer-col">
-          <h3>Contact</h3>
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
-          <a href={`tel:+${profile.phoneRaw}`}>{profile.phone}</a>
-          <p>{profile.location}</p>
-          <Link to="/cv/ahmad-rehan-cv.html" className="footer-cv-link">
-            View / Download CV →
-          </Link>
-        </div>
-      </div>
+        <nav className="footer-nav" aria-label="Footer">
+          {navLinks.map((l) => (
+            <a key={l.to} href={l.to}>
+              {l.label}
+            </a>
+          ))}
+        </nav>
 
-      <div className="footer-bottom">
-        <div className="container footer-bottom-inner">
+        <div className="footer-copy">
           <p>© 2026 Ahmad Rehan. All Rights Reserved.</p>
-          <a href="#top" className="back-top" aria-label="Back to top" title="Back to top"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+          <a
+            href="#home"
+            className="back-top"
+            aria-label="Back to top"
+            title="Back to top"
+            onClick={scrollTop}
           >
             <FaArrowUp />
           </a>

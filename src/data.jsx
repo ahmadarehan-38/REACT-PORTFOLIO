@@ -57,12 +57,13 @@ export const socials = [
 ];
 
 export const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Skills", to: "/skills" },
-  { label: "Projects", to: "/projects" },
-  { label: "Education", to: "/education" },
-  { label: "Contact", to: "/contact" },
+  { label: "Home", to: "#home" },
+  { label: "Portfolio", to: "#portfolio" },
+  { label: "Resume", to: "#resume" },
+  { label: "About", to: "#about" },
+  { label: "Skills", to: "#skills" },
+  { label: "Services", to: "#services" },
+  { label: "Contact", to: "#contact" },
 ];
 
 export const stats = [

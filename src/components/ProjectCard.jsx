@@ -1,31 +1,58 @@
-import {
-  FaArrowRight,
-  FaGlobe,
-} from "react-icons/fa";
-import Tilt from "./Tilt";
-
-const iconMap = {
-  FaGlobe: <FaGlobe />,
-};
+import { FaArrowRight, FaExternalLinkAlt, FaGlobe } from "react-icons/fa";
 
 export default function ProjectCard({ project }) {
+  const thumb = (
+    <>
+      {project.image ? (
+        <img
+          className="project-image"
+          src={project.image}
+          alt={project.imageAlt || project.name}
+          loading="lazy"
+        />
+      ) : (
+        <span className="project-fallback">
+          <FaGlobe />
+        </span>
+      )}
+      <span className="project-overlay" aria-hidden="true">
+        <span className="project-view">
+          <FaExternalLinkAlt />
+        </span>
+      </span>
+      <span className="project-category">{project.category}</span>
+    </>
+  );
+
   return (
-    <Tilt className="project-card" max={8}>
-      <div className={`project-thumb ${project.image ? "has-image" : ""}`} style={{ background: project.gradient }}>
-        {project.image ? (
-          <img className="project-image" src={project.image} alt={project.imageAlt} />
+    <article className="project-card">
+      <div
+        className={`project-thumb ${project.image ? "has-image" : ""}`}
+        style={{ background: project.gradient }}
+      >
+        {project.url ? (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Visit ${project.name}`}
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "grid",
+              placeItems: "center",
+            }}
+          >
+            {thumb}
+          </a>
         ) : (
-          <>
-            <span className="project-big-icon">{iconMap[project.icon]}</span>
-            <span className="project-ring-deco" />
-            <span className="project-ring-deco r2" />
-          </>
+          thumb
         )}
-        <span className="project-category">{project.category}</span>
       </div>
+
       <div className="project-body">
         <h3>{project.name}</h3>
-        <p>{project.description}</p>
+        <span className="project-cat">{project.category}</span>
         <div className="project-tags">
           {project.tags.map((t) => (
             <span key={t}>{t}</span>
@@ -41,9 +68,11 @@ export default function ProjectCard({ project }) {
             Visit Website <FaArrowRight />
           </a>
         ) : (
-          <span className="project-link project-link-static">Offline desktop app</span>
+          <span className="project-link project-link-static">
+            Offline desktop app
+          </span>
         )}
       </div>
-    </Tilt>
+    </article>
   );
 }

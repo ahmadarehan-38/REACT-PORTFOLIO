@@ -1,232 +1,98 @@
-import { useRef } from "react";
 import { motion } from "framer-motion";
-import {
-  FaArrowDown,
-  FaCss3Alt,
-  FaDownload,
-} from "react-icons/fa";
-import {
-  SiReact,
-  SiNodedotjs,
-  SiMongodb,
-  SiFirebase,
-  SiJavascript,
-} from "react-icons/si";
-
+import { FaDownload } from "react-icons/fa";
 import Counter from "./Counter";
-import { socials } from "../data";
+import { profile, socials, stats } from "../data";
 
-const line1 = ["Turning", "Ideas", "Into"];
-const line2 = ["Powerful", "Digital", "Solutions"];
-
-const wordVariant = {
-  hidden: { opacity: 0, y: 60, rotateX: -60 },
-  show: (i) => ({
-    opacity: 1,
-    y: 0,
-    rotateX: 0,
-    transition: { delay: 0.15 + i * 0.09, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
-
-const chips = [
-  { icon: <SiReact />, label: "React", pos: "chip-1", color: "#61dafb" },
-  { icon: <SiNodedotjs />, label: "Node.js", pos: "chip-2", color: "#7ccf29" },
-  { icon: <SiMongodb />, label: "MongoDB", pos: "chip-3", color: "#4fbd54" },
-  { icon: <SiFirebase />, label: "Firebase", pos: "chip-4", color: "#ffca28" },
-  { icon: <SiJavascript />, label: "JavaScript", pos: "chip-5", color: "#f7df1e" },
-  { icon: <FaCss3Alt />, label: "CSS3", pos: "chip-6", color: "#38bdf8" },
-];
+const fadeUp = (delay) => ({
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { delay, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+});
 
 export default function Hero() {
-  const sceneRef = useRef(null);
-
-  const onMouseMove = (e) => {
-    const scene = sceneRef.current;
-    if (!scene) return;
-    const r = scene.getBoundingClientRect();
-    const px = (e.clientX - r.left) / r.width - 0.5;
-    const py = (e.clientY - r.top) / r.height - 0.5;
-    scene.style.transform = `rotateY(${px * 16}deg) rotateX(${-py * 16}deg)`;
-  };
-
-  const onMouseLeave = () => {
-    if (sceneRef.current)
-      sceneRef.current.style.transform = "rotateY(0deg) rotateX(0deg)";
-  };
+  const [firstName, ...rest] = profile.name.split(" ");
 
   return (
-    <section id="home" className="hero section">
-      <div className="bg-grid" aria-hidden="true" />
-      <div className="container hero-inner">
-        <div className="hero-left">
-          <motion.span
-            className="hero-tag"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+    <section id="home" className="hero">
+      <img
+        className="hero-bg"
+        src={profile.photo}
+        alt=""
+        aria-hidden="true"
+      />
+      <div className="hero-overlay" aria-hidden="true" />
+
+      <div className="container hero-content">
+        <motion.span className="hero-pill" {...fadeUp(0.1)}>
+          <span className="pulse-dot" />
+          Available for Freelance &amp; Internship Opportunities
+        </motion.span>
+
+        <motion.span className="hero-hello" {...fadeUp(0.25)}>
+          Hello, I&apos;m
+        </motion.span>
+
+        <motion.h1 className="hero-name" {...fadeUp(0.4)}>
+          {firstName} <span className="accent">{rest.join(" ")}</span>
+        </motion.h1>
+
+        <motion.p className="hero-role" {...fadeUp(0.55)}>
+          {profile.role}
+        </motion.p>
+
+        <motion.p className="hero-tagline" {...fadeUp(0.7)}>
+          {profile.tagline}. {profile.intro}
+        </motion.p>
+
+        <motion.div className="hero-buttons" {...fadeUp(0.85)}>
+          <a href="#contact" className="btn btn-primary">
+            Hire Me
+          </a>
+          <a href="#portfolio" className="btn btn-ghost-light">
+            View My Work
+          </a>
+          <a
+            href="/cv/ahmad-rehan-cv.html"
+            target="_blank"
+            rel="noopener"
+            className="btn btn-ghost-light"
           >
-            <span className="pulse-dot" />
-            Available for Freelance &amp; Internship Opportunities
-          </motion.span>
+            <FaDownload /> Download CV
+          </a>
+        </motion.div>
 
-          <h1 className="hero-title">
-            <span className="title-line">
-              {line1.map((w, i) => (
-                <motion.span
-                  key={w}
-                  className="title-word"
-                  custom={i}
-                  variants={wordVariant}
-                  initial="hidden"
-                  animate="show"
-                >
-                  {w}
-                </motion.span>
-              ))}
-            </span>
-            <span className="title-line">
-              {line2.map((w, i) => (
-                <motion.span
-                  key={w}
-                  className="title-word gradient-text"
-                  custom={i + 3}
-                  variants={wordVariant}
-                  initial="hidden"
-                  animate="show"
-                >
-                  {w}
-                </motion.span>
-              ))}
-            </span>
-          </h1>
-
-          <motion.p
-            className="hero-sub"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.7 }}
-          >
-            I&apos;m <strong>Ahmad Rehan</strong> — a Full Stack Web Developer
-            crafting modern, high-performance web applications with clean code,
-            stunning interfaces and seamless user experiences that leave a
-            lasting impact.
-          </motion.p>
-
-          <motion.div
-            className="hero-buttons"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.85, duration: 0.7 }}
-          >
-            <a href="#contact" className="btn btn-primary">
-              Get In Touch
-            </a>
-            <a href="#projects" className="btn btn-ghost">
-              View My Work
-            </a>
-            <a href="/cv/ahmad-rehan-cv.html" target="_blank" rel="noopener" className="btn btn-ghost cv-btn">
-              <FaDownload /> Download CV
-            </a>
-          </motion.div>
-
-          <motion.div
-            className="hero-social"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.7 }}
-          >
-            <span className="social-label">Find me on</span>
-            <div className="social-row">
-              {socials.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  title={social.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="hero-stats"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-          >
-            <div>
-              <Counter to={1} suffix="+" />
-              <span>Years Coding</span>
-            </div>
-            <div>
-              <Counter to={10} suffix="+" />
-              <span>Technologies</span>
-            </div>
-            <div>
-              <Counter to={5} suffix="+" />
-              <span>Projects Shipped</span>
-            </div>
-          </motion.div>
-        </div>
-
-        <motion.div
-          className="hero-right"
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="hero-visual" onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
-            <div className="scene" ref={sceneRef}>
-              {/* orbit rings */}
-              <div className="ring ring-1">
-                <span className="ring-dot" style={{ background: "#9a8f86" }} />
-              </div>
-              <div className="ring ring-2">
-                <span className="ring-dot" style={{ background: "#8a5a64" }} />
-              </div>
-              <div className="ring ring-3">
-                <span className="ring-dot" style={{ background: "#b7a98f" }} />
-              </div>
-
-              {/* center card */}
-              <div className="orbit-card">
-                <div className="orbit-glow" />
-                <div className="orbit-avatar">
-                  <span>AR</span>
-                </div>
-                <h3>Ahmad Rehan</h3>
-                <p>Full Stack Developer</p>
-                <div className="orbit-badge">
-                  <span className="pulse-dot" /> MERN · React · Firebase
-                </div>
-              </div>
-
-              {/* floating tech chips */}
-              {chips.map((c) => (
-                <div
-                  key={c.label}
-                  className={`float-chip ${c.pos}`}
-                  style={{ "--chip-color": c.color }}
-                >
-                  <span className="chip-icon">{c.icon}</span>
-                  <span className="chip-label">{c.label}</span>
-                </div>
-              ))}
-            </div>
+        <motion.div className="hero-social" {...fadeUp(1)}>
+          <div className="social-row on-dark">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                aria-label={s.label}
+                title={s.label}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {s.icon}
+              </a>
+            ))}
           </div>
+        </motion.div>
+
+        <motion.div className="hero-stats" {...fadeUp(1.15)}>
+          {stats.map((s) => (
+            <div key={s.label}>
+              <Counter to={s.value} suffix={s.suffix} />
+              <span>{s.label}</span>
+            </div>
+          ))}
         </motion.div>
       </div>
 
-      <a href="#about" className="scroll-hint" aria-label="Scroll down">
+      <a href="#portfolio" className="scroll-hint" aria-label="Scroll down">
         <span className="mouse">
           <span className="wheel" />
         </span>
-        <FaArrowDown className="scroll-arrow" />
+        Scroll
       </a>
     </section>
   );
