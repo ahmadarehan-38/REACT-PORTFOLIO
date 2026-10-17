@@ -1,6 +1,6 @@
 import ParticleBackground from "./components/ParticleBackground";
 import ScrollProgress from "./components/ScrollProgress";
-import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import Projects from "./components/Projects";
@@ -23,9 +23,9 @@ export default function App() {
       </div>
 
       <ScrollProgress />
-      <Navbar />
+      <Sidebar />
 
-      <main>
+      <main className="layout-main">
         <Hero />
         <Marquee />
         <Projects />
@@ -34,9 +34,8 @@ export default function App() {
         <Skills />
         <Services />
         <Contact />
+        <Footer />
       </main>
-
-      <Footer />
     </>
   );
 }

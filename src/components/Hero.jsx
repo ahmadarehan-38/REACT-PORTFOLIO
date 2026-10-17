@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FaDownload } from "react-icons/fa";
-import Counter from "./Counter";
-import { profile, socials, stats } from "../data";
+import { profile, socials } from "../data";
 
 const fadeUp = (delay) => ({
   initial: { opacity: 0, y: 30 },
@@ -76,15 +75,6 @@ export default function Hero() {
               </a>
             ))}
           </div>
-        </motion.div>
-
-        <motion.div className="hero-stats" {...fadeUp(1.15)}>
-          {stats.map((s) => (
-            <div key={s.label}>
-              <Counter to={s.value} suffix={s.suffix} />
-              <span>{s.label}</span>
-            </div>
-          ))}
         </motion.div>
       </div>
 
