@@ -1,144 +1,172 @@
-import {
-  FaCode,
-  FaServer,
-  FaDatabase,
-  FaMobileAlt,
-  FaPaintBrush,
-  FaRocket,
-  FaGithub,
-  FaLinkedinIn,
-  FaBirthdayCake,
-  FaLanguage,
-  FaFlag,
-  FaMusic,
-  FaMapMarkerAlt,
-  FaEnvelope,
-} from "react-icons/fa";
-import {
-  SiReact,
-  SiJavascript,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiFirebase,
-  SiHtml5,
-  SiGit,
-  SiGithub,
-  SiVite,
-  SiNpm,
-  SiFigma,
-  SiSupabase,
-  SiTailwindcss,
-} from "react-icons/si";
-import { FaCss3Alt } from "react-icons/fa";
-
 export const profile = {
   name: "Ahmad Rehan",
+  first: "Ahmad",
+  last: "Rehan",
+  wordmark: "AR",
   role: "Full Stack Web Developer",
-  tagline: "Turning Ideas Into Powerful Digital Solutions",
+  tagline: "Designing quiet interfaces. Writing loud code.",
   email: "ahmadrehan3838@gmail.com",
   phone: "+92 334 0776122",
   phoneRaw: "923340776122",
-  location: "Pasni, Balochistan, Pakistan",
+  location: "Pasni, Balochistan, PK",
+  timezone: "Asia/Karachi",
   dob: "20 October 2008",
   nationality: "Pakistani",
   languages: ["English", "Urdu", "Balochi", "Brahvi"],
   interests: ["Music", "Reading", "Traveling"],
   intro:
-    "I design and develop modern, high-performance web applications with clean code, stunning interfaces and seamless user experiences that make a lasting impact.",
+    "I design and develop modern, high-performance web applications with clean code, considered interfaces and seamless experiences.",
   about:
-    "I am a passionate Full Stack Web Developer dedicated to building modern, responsive, and high-performance web applications. I enjoy transforming creative ideas into functional digital experiences that are both visually appealing and user-friendly.",
+    "I am a self-taught Full Stack Web Developer from Pasni, Balochistan. I build modern, responsive and fast web applications — and I care as much about how a page feels as how it works. My current playground is the MERN stack: React for the interface, Node and Express for the server, MongoDB and Firebase for the data.",
+  availability: "Open for freelance & internships",
   photo: "/ahmad.png",
+  portrait: "/portrait-dots.png",
+  photoCut: "/ahmad-cutout.png",
 };
 
 export const socials = [
-  { icon: <FaGithub />, label: "GitHub", href: "https://github.com/ahmadarehan-38" },
-  { icon: <FaLinkedinIn />, label: "LinkedIn", href: "https://www.linkedin.com/in/ahmad-rehan/" },
+  { label: "GitHub", short: "GH", href: "https://github.com/ahmadarehan-38" },
+  { label: "LinkedIn", short: "IN", href: "https://www.linkedin.com/in/ahmad-rehan/" },
+  { label: "Email", short: "@", href: "mailto:ahmadrehan3838@gmail.com" },
 ];
 
 export const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Skills", to: "/skills" },
-  { label: "Projects", to: "/projects" },
-  { label: "Education", to: "/education" },
-  { label: "Contact", to: "/contact" },
+  { label: "Index", to: "#top", num: "01" },
+  { label: "About", to: "#about", num: "02" },
+  { label: "Work", to: "#work", num: "03" },
+  { label: "Archive", to: "#archive", num: "04" },
+  { label: "Services", to: "#services", num: "05" },
+  { label: "Contact", to: "#contact", num: "06" },
 ];
 
 export const stats = [
-  { value: 1, suffix: "+", label: "Years Coding" },
-  { value: 10, suffix: "+", label: "Technologies" },
-  { value: 5, suffix: "+", label: "Projects Shipped" },
+  { value: 1, suffix: "+", label: "Years writing code" },
+  { value: 15, suffix: "", label: "Tools in the stack" },
+  { value: 5, suffix: "+", label: "Projects shipped" },
+  { value: 4, suffix: "", label: "Languages spoken" },
 ];
 
 export const services = [
   {
-    icon: <FaCode />,
+    num: "01",
     title: "Frontend Development",
-    text: "Building fast, responsive and interactive websites using React, HTML, CSS and JavaScript.",
+    short: "Interfaces",
+    text: "Pixel-disciplined, accessible interfaces built with React, modern CSS and just enough motion to feel alive — not enough to get in the way.",
+    tags: ["React", "JavaScript", "CSS3"],
   },
   {
-    icon: <FaServer />,
+    num: "02",
     title: "Backend Development",
-    text: "Creating secure server-side applications with Node.js, Express and REST APIs.",
+    short: "Servers",
+    text: "Secure server-side logic with Node.js and Express — REST endpoints, authentication flows and data models that hold up in production.",
+    tags: ["Node.js", "Express", "REST"],
   },
   {
-    icon: <FaDatabase />,
+    num: "03",
     title: "Database Integration",
-    text: "Managing data efficiently with MongoDB, Firebase and Supabase.",
+    short: "Data",
+    text: "Schema design, queries and real-time sync across MongoDB, Firebase and Supabase, wired cleanly into the front end.",
+    tags: ["MongoDB", "Firebase", "Supabase"],
   },
   {
-    icon: <FaMobileAlt />,
+    num: "04",
     title: "Responsive Design",
-    text: "Mobile-friendly layouts that work perfectly on phones, tablets and desktops.",
+    short: "Every screen",
+    text: "Layouts that hold together from a 320px phone to an ultrawide display — fluid type, sensible breakpoints, no horizontal scroll surprises.",
+    tags: ["Mobile first", "Fluid type"],
   },
   {
-    icon: <FaPaintBrush />,
+    num: "05",
     title: "UI/UX Design",
-    text: "Designing clean, modern and user-friendly interfaces with a focus on great experience.",
+    short: "Design",
+    text: "Figma wireframes to finished interfaces: clear hierarchy, honest typography and interactions that explain themselves.",
+    tags: ["Figma", "Design systems"],
   },
   {
-    icon: <FaRocket />,
+    num: "06",
     title: "Performance & Deployment",
-    text: "Optimizing speed, SEO and shipping apps to production with confidence.",
+    short: "Shipping",
+    text: "Image and bundle optimisation, Lighthouse passes and deployment to Vercel with SEO and metadata done properly.",
+    tags: ["Vite", "Vercel", "SEO"],
   },
 ];
 
 export const projects = [
   {
     key: "bowan",
+    index: "01",
     name: "Bowan",
+    subtitle: "Education platform",
     description:
-      "A modern web experience built with React, Node.js, Express.js and MongoDB, with GSAP animations and Figma-designed interfaces.",
+      "A modern education web experience built with React, Node.js, Express and MongoDB, with GSAP motion and interfaces designed in Figma.",
     tags: ["React", "Node.js", "Express.js", "MongoDB", "GSAP", "Figma"],
     category: "Web App",
+    year: "2025",
+    role: "Design & Development",
     url: "https://bowan.vercel.app",
-    image: "/Bowan%20Education%20Logo%20with%20Book%20and%20Cap.png",
+    image: "/Bowan Education Logo with Book and Cap.png",
     imageAlt: "Bowan education logo",
-    gradient: "linear-gradient(135deg, #2b0a15 0%, #722f37 55%, #c9a86a 130%)",
+    tone: "warm",
   },
   {
     key: "makran-blue",
+    index: "02",
     name: "Makran Blue",
+    subtitle: "Coastal brand site",
     description:
-      "A polished, animated website made with React, Node.js, Express.js and MongoDB, designed in Figma and brought to life with GSAP.",
+      "A polished, animated website made with React, Node.js, Express and MongoDB, designed in Figma and brought to life with GSAP.",
     tags: ["React", "Node.js", "Express.js", "MongoDB", "GSAP", "Figma"],
     category: "Web App",
+    year: "2025",
+    role: "Design & Development",
     url: "https://makran-blue.vercel.app",
     image: "/icon-192.png",
     imageAlt: "Makran Blue logo",
-    gradient: "linear-gradient(135deg, #3a0f1f 0%, #8e2438 50%, #d9b57c 125%)",
+    tone: "cold",
   },
   {
     key: "pasni-fish",
+    index: "03",
     name: "Pasni Fish",
+    subtitle: "Offline desktop dashboard",
     description:
-      "An offline dashboard desktop application for managing Pasni Fish, built with React and Electron.",
-    tags: ["React", "Electron", "Offline Desktop App"],
+      "A desktop dashboard for managing a fishing business without an internet connection, built with React and Electron.",
+    tags: ["React", "Electron", "Desktop", "Offline"],
     category: "Desktop App",
+    year: "2025",
+    role: "Product & Development",
+    url: null,
     image: "/pasni-fish-dashboard.svg",
     imageAlt: "Illustrative dashboard preview for the Pasni Fish desktop app",
-    gradient: "linear-gradient(135deg, #1d0710 0%, #5c1a2a 55%, #a9822f 130%)",
+    tone: "mono",
+  },
+  {
+    key: "facebook-clone",
+    index: "04",
+    name: "Facebook Clone",
+    subtitle: "Interface study",
+    description:
+      "A reconstruction of Facebook's feed, stories and reactions — built to understand layout systems, component structure and real-time updates.",
+    tags: ["React", "Firebase"],
+    category: "Study",
+    year: "2024",
+    role: "Learning project",
+    url: null,
+    tone: "dark",
+  },
+  {
+    key: "olx-clone",
+    index: "05",
+    name: "OLX Clone",
+    subtitle: "Marketplace study",
+    description:
+      "A classifieds marketplace with listings, filters and a posting flow, built to practise CRUD operations and Firestore queries.",
+    tags: ["React", "Firebase", "CRUD"],
+    category: "Study",
+    year: "2024",
+    role: "Learning project",
+    url: null,
+    tone: "light",
   },
 ];
 
@@ -154,28 +182,28 @@ export const skills = [
 ];
 
 export const tools = [
-  { icon: <SiReact />, name: "React", color: "#61dafb" },
-  { icon: <SiJavascript />, name: "JavaScript", color: "#f7df1e" },
-  { icon: <SiNodedotjs />, name: "Node.js", color: "#7ccf29" },
-  { icon: <SiExpress />, name: "Express", color: "var(--heading)" },
-  { icon: <SiMongodb />, name: "MongoDB", color: "#4fbd54" },
-  { icon: <SiFirebase />, name: "Firebase", color: "#ffca28" },
-  { icon: <SiSupabase />, name: "Supabase", color: "#3ecf8e" },
-  { icon: <SiHtml5 />, name: "HTML5", color: "#e96228" },
-  { icon: <FaCss3Alt />, name: "CSS3", color: "#38bdf8" },
-  { icon: <SiTailwindcss />, name: "Tailwind", color: "#38bdf8" },
-  { icon: <SiGit />, name: "Git", color: "#f05033" },
-  { icon: <SiGithub />, name: "GitHub", color: "var(--heading)" },
-  { icon: <SiVite />, name: "Vite", color: "#a855f7" },
-  { icon: <SiNpm />, name: "npm", color: "#cb3837" },
-  { icon: <SiFigma />, name: "Figma", color: "#a259ff" },
+  "React.js",
+  "JavaScript",
+  "Node.js",
+  "Express.js",
+  "MongoDB",
+  "Firebase",
+  "Supabase",
+  "HTML5",
+  "CSS3",
+  "Tailwind",
+  "Git",
+  "GitHub",
+  "Vite",
+  "npm",
+  "Figma",
 ];
 
 export const education = [
   {
     year: "2025 — Present",
     title: "SMIT — Full Stack Web Development",
-    text: "Learning MERN Stack, React.js, JavaScript, Firebase, Node.js, Express, MongoDB and modern web development.",
+    text: "MERN Stack, React.js, JavaScript, Firebase, Node.js, Express and MongoDB.",
     tags: ["MERN", "React", "Firebase"],
   },
   {
@@ -207,42 +235,30 @@ export const experience = [
   },
 ];
 
-export const personalDetails = [
-  { icon: <FaBirthdayCake />, label: "Date of Birth", value: "20 October 2008" },
-  {
-    icon: <FaLanguage />,
-    label: "Spoken Languages",
-    value: "English · Urdu · Balochi · Brahvi",
-  },
-  { icon: <FaFlag />, label: "Nationality", value: "Pakistani" },
-  { icon: <FaMusic />, label: "Interests", value: "Music · Reading · Traveling" },
-  { icon: <FaMapMarkerAlt />, label: "Location", value: "Pasni, Balochistan, Pakistan" },
-  { icon: <FaEnvelope />, label: "Email", value: "ahmadrehan3838@gmail.com" },
-];
-
 export const journey = [
   {
     step: "01",
     title: "Where it started",
     text: "In 2022 I discovered how the web works and wrote my first lines of HTML. That first page that rendered in the browser — something I built from nothing — hooked me instantly.",
-    emoji: "🌱",
   },
   {
     step: "02",
     title: "Building real projects",
     text: "I challenged myself by cloning platforms I use every day — Facebook, OLX, WhatsApp and YouTube — learning layouts, interactivity and real-time data with Firebase along the way.",
-    emoji: "⚙️",
   },
   {
     step: "03",
     title: "Going full stack",
     text: "At SMIT I'm mastering the MERN stack: React for interfaces, Node.js and Express for servers, and MongoDB for data — turning static pages into complete applications.",
-    emoji: "🚀",
   },
   {
     step: "04",
     title: "What's next",
     text: "I'm freelancing, shipping client projects and pushing toward Next.js and production-grade architecture — always learning, always building.",
-    emoji: "✨",
   },
+];
+
+export const archive = [
+  ...experience.map((e) => ({ kind: "Experience", ...e })),
+  ...education.map((e) => ({ kind: "Education", ...e })),
 ];
