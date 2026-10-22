@@ -1,166 +1,103 @@
-import { useState } from "react";
-import {
-  FaEnvelope,
-  FaPhoneAlt,
-  FaMapMarkerAlt,
-  FaPaperPlane,
-} from "react-icons/fa";
-import Reveal from "./Reveal";
-import { socials } from "../data";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { profile, socials } from "../data";
 
-const info = [
-  {
-    icon: <FaEnvelope />,
-    label: "Email",
-    value: "ahmadrehan3838@gmail.com",
-    href: "mailto:ahmadrehan3838@gmail.com",
-  },
-  {
-    icon: <FaPhoneAlt />,
-    label: "Phone / WhatsApp",
-    value: "+92 334 0776122",
-    href: "tel:+923340776122",
-  },
-  {
-    icon: <FaMapMarkerAlt />,
-    label: "Location",
-    value: "Pasni, Balochistan, Pakistan",
-    href: null,
-  },
-];
+function useLocalTime() {
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const format = () =>
+      new Intl.DateTimeFormat("en-GB", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+        timeZone: profile.timezone,
+      }).format(new Date());
+    setTime(format());
+    const id = setInterval(() => setTime(format()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const sendToWhatsApp = (e) => {
-    e.preventDefault();
-    const { name, email, subject, phone, message } = formData;
-    const whatsappMessage = `*Hello! I'd like to work with you.*
-
-*Name:* ${name}
-*Email:* ${email}
-*Subject:* ${subject || "—"}
-*Phone:* ${phone}
-
-*Message:*
-${message}`;
-    const url = `https://wa.me/923340776122?text=${encodeURIComponent(
-      whatsappMessage
-    )}`;
-    window.open(url, "_blank");
-  };
+  const time = useLocalTime();
 
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="contact section" data-nav="ink">
       <div className="container">
-        <Reveal className="section-head">
-          <span className="section-tag">Get In Touch</span>
-          <h2 className="section-title">
-            Let&apos;s Build Something{" "}
-            <span className="gradient-text">Together</span>
-          </h2>
-          <p className="section-sub">
-            Have a project in mind or want to work together? Send me a message and
-            I&apos;ll get back to you on WhatsApp.
-          </p>
-        </Reveal>
+        <div className="contact-top">
+          <span className="eyebrow">06 — Contact</span>
+          <span className="mono" style={{ opacity: 0.6 }}>
+            {profile.availability}
+          </span>
+        </div>
+
+        <h2 className="contact-title">
+          <motion.span
+            className="sold"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Let&apos;s
+          </motion.span>
+          <motion.span
+            className="outline-text"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: 0.8,
+              delay: 0.08,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            Talk
+          </motion.span>
+        </h2>
+
+        <a className="contact-mail" href={`mailto:${profile.email}`}>
+          {profile.email}
+          <span className="arr" aria-hidden="true">
+            ↗
+          </span>
+        </a>
 
         <div className="contact-grid">
-          <Reveal className="contact-info" delay={0.1}>
-            {info.map((c) => (
-              <a
-                key={c.label}
-                className="contact-card"
-                href={c.href || undefined}
-                onClick={c.href ? undefined : (e) => e.preventDefault()}
-              >
-                <span className="contact-icon">{c.icon}</span>
-                <div>
-                  <span className="contact-label">{c.label}</span>
-                  <span className="contact-value">{c.value}</span>
-                </div>
-              </a>
-            ))}
+          <div className="contact-cell">
+            <h4>Location</h4>
+            <p>{profile.location}</p>
+            <p style={{ opacity: 0.6 }}>GMT +05:00 · {time} PKT</p>
+          </div>
 
+          <div className="contact-cell">
+            <h4>Direct</h4>
+            <p>
+              <a href={`tel:${profile.phoneRaw}`}>{profile.phone}</a>
+            </p>
+            <p>
+              <a href={`mailto:${profile.email}`}>{profile.email}</a>
+            </p>
+          </div>
+
+          <div className="contact-cell">
+            <h4>Elsewhere</h4>
             <div className="contact-socials">
-              <span className="social-label">Follow Me</span>
-              <div className="social-row">
-                {socials.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    title={social.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
+              {socials.map((s) => (
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer">
+                  {s.label} <span>{s.short}</span>
+                </a>
+              ))}
             </div>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.2}>
-            <form className="contact-form" onSubmit={sendToWhatsApp}>
-              <div className="form-row">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-row">
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Your Phone Number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <textarea
-                rows="6"
-                name="message"
-                placeholder="Tell me about your project..."
-                value={formData.message}
-                onChange={handleChange}
-                required
-              />
-              <button type="submit" className="btn btn-primary form-btn">
-                <FaPaperPlane /> Send via WhatsApp
-              </button>
-            </form>
-          </Reveal>
+          <div className="contact-cell">
+            <h4>Availability</h4>
+            <p>Taking on freelance projects &amp; internships for 2026.</p>
+            <p style={{ opacity: 0.6 }}>Replies within 24 hours.</p>
+          </div>
         </div>
       </div>
     </section>

@@ -1,73 +1,91 @@
-import {
-  FaCode,
-  FaMobileAlt,
-  FaServer,
-  FaDatabase,
-  FaPaintBrush,
-  FaRocket,
-} from "react-icons/fa";
+import { useState } from "react";
 import Reveal from "./Reveal";
-import Tilt from "./Tilt";
-
-const services = [
-  {
-    icon: <FaCode />,
-    title: "Frontend Development",
-    text: "Building fast, responsive and interactive websites using React, HTML, CSS and JavaScript.",
-  },
-  {
-    icon: <FaServer />,
-    title: "Backend Development",
-    text: "Creating secure server-side applications with Node.js, Express and REST APIs.",
-  },
-  {
-    icon: <FaDatabase />,
-    title: "Database Integration",
-    text: "Managing data efficiently with MongoDB, Firebase and Supabase.",
-  },
-  {
-    icon: <FaMobileAlt />,
-    title: "Responsive Design",
-    text: "Mobile-friendly layouts that work perfectly on phones, tablets and desktops.",
-  },
-  {
-    icon: <FaPaintBrush />,
-    title: "UI/UX Design",
-    text: "Designing clean, modern and user-friendly interfaces with a focus on great experience.",
-  },
-  {
-    icon: <FaRocket />,
-    title: "Performance & Deployment",
-    text: "Optimizing speed, SEO and shipping apps to production with confidence.",
-  },
-];
+import { services } from "../data";
 
 export default function Services() {
-  return (
-    <section id="services" className="section section-alt">
-      <div className="container">
-        <Reveal className="section-head">
-          <span className="section-tag">What I Do</span>
-          <h2 className="section-title">
-            My <span className="gradient-text">Services</span>
-          </h2>
-          <p className="section-sub">
-            Modern web development solutions focused on performance,
-            responsiveness and user experience.
-          </p>
-        </Reveal>
+  const [open, setOpen] = useState(0);
 
-        <div className="services-grid">
-          {services.map((s, i) => (
-            <Reveal key={s.title} delay={0.08 * i}>
-              <Tilt className="service-card" max={10}>
-                <span className="service-icon">{s.icon}</span>
-                <h3>{s.title}</h3>
-                <p>{s.text}</p>
-                <span className="service-number">0{i + 1}</span>
-              </Tilt>
-            </Reveal>
-          ))}
+  return (
+    <section id="services" className="services section" data-nav="paper">
+      <div className="container">
+        <div className="section-head">
+          <div>
+            <span className="eyebrow">05 — Services</span>
+            <h2
+              className="display"
+              style={{ fontSize: "clamp(2rem, 6vw, 4.6rem)", marginTop: 18 }}
+            >
+              The services
+              <br />
+              <span className="outline-text">we provide</span>
+            </h2>
+          </div>
+          <p
+            style={{
+              maxWidth: "40ch",
+              fontSize: 14,
+              lineHeight: 1.75,
+              opacity: 0.7,
+            }}
+          >
+            From a single responsive landing page to a full MERN application —
+            design, build and ship, handled by one person who cares about the
+            last five percent.
+          </p>
+        </div>
+
+        <div className="service-list">
+          {services.map((service, i) => {
+            const isOpen = open === i;
+            return (
+              <Reveal key={service.num} delay={i * 0.04} y={16}>
+                <div className={`service-row ${isOpen ? "is-open" : ""}`}>
+                  <button
+                    className="service-trigger"
+                    onClick={() => setOpen(isOpen ? -1 : i)}
+                    aria-expanded={isOpen}
+                  >
+                    <span className="service-num">({service.num})</span>
+                    <span className="service-name">{service.title}</span>
+                    <span className="service-short">{service.short}</span>
+                    <span className="service-plus" aria-hidden="true">
+                      +
+                    </span>
+                  </button>
+
+                  <div className="service-panel">
+                    <div className="service-panel-inner">
+                      <p>{service.text}</p>
+                      <div className="tags">
+                        {service.tags.map((t) => (
+                          <span key={t}>{t}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: 20,
+            flexWrap: "wrap",
+            marginTop: 34,
+          }}
+        >
+          <p style={{ fontSize: 13.5, opacity: 0.62, maxWidth: "46ch" }}>
+            Not sure which one you need? Send a sentence about the project and
+            I&apos;ll reply with a plan.
+          </p>
+          <a className="btn btn--ink" href="#contact">
+            <span>Book a call</span>
+          </a>
         </div>
       </div>
     </section>
